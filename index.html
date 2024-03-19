@@ -27,14 +27,96 @@
       <!-- SECTION shop items -->
       <div class="col-8">
 
-        <!-- STUB first card -->
-        <div class="card shadow">
+        <!-- STUB flavors -->
+        <section class="row align-items-center justify-content-around">
+          <h2 class="text-center">Ice Cream Flavors</h2>
+          <!-- STUB flavor 1 -->
+          <div class="col-3 card shadow p-3">
+            <img src="//placehold.it/300x200" alt="" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Cookie Dough</h5>
+              <p class="card-text">$1.23</p>
+              <div class="row text-end">
+                <button class=" btn btn-primary btn-circle"><i class="mdi mdi-plus-thick"
+                    onclick="addIceCream('Cookie Dough')"></i></button>
+              </div>
+            </div>
+          </div>
 
+          <!-- STUB flavor 2 -->
+          <div class="col-3 card shadow p-3">
+            <img src="//placehold.it/300x200" alt="" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Vanilla</h5>
+              <p class="card-text">$1.23</p>
+              <div class="row text-end">
+                <button class=" btn btn-primary btn-circle"><i class="mdi mdi-plus-thick"
+                    onclick="addIceCream('Vanilla')"></i></button>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <!-- STUB flavor 3 -->
+      <div class="col-3 card shadow p-3">
+        <img src="//placehold.it/300x200" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Strawberry</h5>
+          <p class="card-text">$1.23</p>
+          <div class="row text-end">
+            <button class=" btn btn-primary btn-circle"><i class="mdi mdi-plus-thick"
+                onclick="addIceCream('Strawberry')"></i></button>
+          </div>
         </div>
       </div>
-      <div class="col-4">
 
+    </section>
+
+    <!-- STUB toppings -->
+    <section class="row align-items-center justify-content-around mt-6">
+      <h2 class="text-center">Toppings</h2>
+      <!-- STUB toppings 1 -->
+      <div class="col-3 card shadow p-3">
+        <img src="//placehold.it/300x200" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Sprinkles</h5>
+          <p class="card-text">$1.23</p>
+        </div>
       </div>
+
+      <!-- STUB toppings 2 -->
+      <div class="col-3 card shadow p-3">
+        <img src="//placehold.it/300x200" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Chocolate Chips</h5>
+          <p class="card-text">$1.23</p>
+        </div>
+      </div>
+
+      <!-- STUB toppings 3 -->
+      <div class="col-3 card shadow p-3">
+        <img src="//placehold.it/300x200" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Cookie Chunks</h5>
+          <p class="card-text">$1.23</p>
+        </div>
+      </div>
+
+    </section>
+    </div>
+
+    <!-- SECTION checkout -->
+    <div class="col-4">
+      <div class="card shadow">
+        <div class="card-body row">
+          <hr>
+          <p id="orderContents"></p>
+          <hr>
+          <h5 class="bold text-end">Total</h5>
+          <p id="totalCart"></p>
+        </div>
+      </div>
+    </div>
     </section>
   </main>
 
