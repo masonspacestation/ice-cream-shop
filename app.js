@@ -35,46 +35,57 @@ let toppings = [{
 
 
 
-// NOTE finds and increments (deprecated findIceCream)
-// function findIceCream(flavor) {
+// NOTE finds and increments (deprecated addIceCream)
+// function addIceCream(itemName) {
 //   for (let i = 0; i < iceCream.length; i++) {
 //     let iceCreamFlavor = iceCream[i]
 
-//     if (iceCreamFlavor.name == flavor) {
+//     if (iceCreamFlavor.name == itemName) {
 //       iceCreamFlavor.quantity += 1
 //       console.log("1️⃣", iceCreamFlavor.name, iceCreamFlavor.quantity)
 //     }
-
 //   }
 //   drawCart()
 // }
 
-function addIceCream(flavor) {
-  for (let i = 0; i < iceCream.length; i++) {
-    let iceCreamFlavor = iceCream[i]
+// NOTE split this out to add and find functions
+function addIceCream(itemName) {
+  let addedItem = findIceCream(itemName)
 
-    if (iceCreamFlavor.name == flavor) {
-      iceCreamFlavor.quantity += 1
-      console.log("1️⃣", iceCreamFlavor.name, iceCreamFlavor.quantity)
-    }
+  addedItem.quantity += 1
 
-  }
   drawCart()
 }
 
+function removeItems(itemName) {
+  let removedItem = findIceCream(itemName)
+  removedItem.quantity -= 1
+  drawCart()
+}
+
+function findIceCream(itemName) {
+  for (let i = 0; i < iceCream.length; i++) {
+    let iceCreamFlavor = iceCream[i]
+
+    if (iceCreamFlavor.name == itemName) {
+      return iceCreamFlavor
+    }
+  }
+}
+
 function drawCart() {
+  console.log("🫣")
 
   let order = ''
   let cartTotal = 0
 
   for (let i = 0; i < iceCream.length; i++) {
     let iceCreamFlavor = iceCream[i]
+
     if (iceCreamFlavor.quantity > 0) {
-
       order +=
-        `<p class="bold">${iceCreamFlavor.name} <button class="text-right" onclick="removeItems(${iceCreamFlavor.name})"><i class="mdi mdi-delete-circle "></i></button></p>
+        `<p class="bold">${iceCreamFlavor.name} <button class="text-right" onclick="removeItems('${iceCreamFlavor.name}')"><i class="mdi mdi-delete-circle "></i></button></p>
         <p>x ${(iceCreamFlavor.quantity).toFixed(2)} cost is <i class="mdi mdi-currency-usd"></i>${(iceCreamFlavor.price * iceCreamFlavor.quantity).toFixed(2)}</p>`
-
 
       cartTotal += (iceCreamFlavor.quantity * iceCreamFlavor.price)
       console.log("2️⃣", cartTotal);
@@ -84,14 +95,6 @@ function drawCart() {
     orderContents.innerHTML = `${order}`
 
     let totalCart = document.getElementById("totalCart")
-    totalCart.innerHTML = `${cartTotal}`
-
+    totalCart.innerHTML = `$${cartTotal.toFixed(2)}`
   }
-
-
-}
-
-function removeItems(removed) {
-
-  console.log("removed", removed)
 }
