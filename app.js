@@ -19,8 +19,8 @@ let iceCream = [{
 
 let toppings = [{
   name: 'Sprinkles',
-  quantity: 0,
-  price: .25
+  price: .25,
+  quantity: 0
 },
 {
   name: 'Chocolate Chips',
@@ -97,4 +97,12 @@ function drawCart() {
     let totalCart = document.getElementById("totalCart")
     totalCart.innerHTML = `$${cartTotal.toFixed(2)}`
   }
+}
+
+function checkout() {
+  iceCream.forEach((iceCreamFlavor) => {
+    iceCreamFlavor.quantity = 0
+    console.log('🍻', iceCreamFlavor);
+  })
+  drawCart()
 }

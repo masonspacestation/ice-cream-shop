@@ -8,5 +8,8 @@ body {
 }
 
 .btn-circle {
+  text-align: center;
+  width: 42px;
+  height: 42px;
   border-radius: 100%;
 }
